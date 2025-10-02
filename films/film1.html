@@ -1,26 +1,42 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Naughty Secrets</title>
   <link rel="stylesheet" href="../style.css">
   <style>
-    #instrukcja {
-      display: none;
-      margin-top: 20px;
-      text-align: center;
-      animation: fadeIn 0.6s ease-in-out;
+    .instruction-panel {
+      max-width: 800px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f9f9f9;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
-    #instrukcja img {
+    .instruction-header {
+      padding: 12px 16px;
+      background: #eee;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .instruction-header:hover {
+      background: #ddd;
+    }
+    .instruction-content {
+      display: none;
+      padding: 15px;
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .instruction-content img {
       max-width: 100%;
       height: auto;
       border-radius: 8px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.4);
-    }
-    #instrukcja p {
-      margin-bottom: 10px;
-      font-weight: bold;
-      font-size: 1rem;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
@@ -29,31 +45,41 @@
   </style>
 </head>
 <body>
-  <a href="../index.html">⬅ back to catalog</a>
+  <a href="../index.html">⬅ Back to catalog</a>
   <h1>Naughty Secrets</h1>
 
-  <!-- Osadzony teaser -->
+  <!-- Embedded teaser -->
   <video controls width="640">
     <source src="../teasers/film1.mp4" type="video/mp4">
-    Twoja przeglądarka nie obsługuje video.
+    Your browser does not support the video tag.
   </video>
 
   <p>Hot blonde with big breasts, she doesn't mind getting pounded in every hole.</p>
 
-  <!-- Link do pełnej wersji -->
-  <a id="filmBtn" class="btn" href="https://shrinkme.top/ucD7Sxek" target="_blank">
-    🔥 Zobacz pełny film
+  <!-- Link to full version -->
+  <a class="btn" href="https://shrinkme.top/ucD7Sxek" target="_blank">
+    🔥 Watch full movie
   </a>
 
-  <!-- Instrukcja (ukryta, pokaże się po kliknięciu) -->
-  <div id="instrukcja">
-    <p>👉 Jak przejść przez reklamy (ok. 30–60 sek):</p>
-    <img src="../img/instrukcja.jpg" alt="Instrukcja krok po kroku">
+  <!-- Collapsible instruction panel -->
+  <div class="instruction-panel">
+    <div class="instruction-header" id="toggleInstruction">
+      📖 Click here if you need help passing ads (30–60s)
+    </div>
+    <div class="instruction-content" id="instructionContent">
+      <p>Follow these quick steps and you’ll reach the video in less than a minute:</p>
+      <img src="../img/instrukcja.jpg" alt="Step by step instruction">
+    </div>
   </div>
 
   <script>
-    document.getElementById("filmBtn").addEventListener("click", function() {
-      document.getElementById("instrukcja").style.display = "block";
+    document.getElementById("toggleInstruction").addEventListener("click", function() {
+      var content = document.getElementById("instructionContent");
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
     });
   </script>
 </body>
