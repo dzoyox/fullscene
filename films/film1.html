@@ -38,6 +38,12 @@
       border-radius: 8px;
       box-shadow: 0 0 12px rgba(0,0,0,0.3);
     }
+    .instruction-intro {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -61,14 +67,19 @@
     🔥 Watch full movie
   </a>
 
+  <!-- Intro text before panel -->
+  <div class="instruction-intro">
+    Having trouble reaching the full movie? Here’s a quick guide:
+  </div>
+
   <!-- Collapsible instruction panel -->
   <div class="instruction-panel">
     <div class="instruction-header" id="toggleInstruction">
-      📖 Click here if you need help passing ads (30–60s)
+      📖 Click here to see step-by-step instructions (30–60s)
     </div>
     <div class="instruction-content" id="instructionContent">
       <p>Follow these quick steps and you’ll reach the video in less than a minute:</p>
-      <img src="../img/instrukcja.jpg" alt="Step by step instruction">
+      <img src="../img/instruction.jpg" alt="Step by step instruction">
     </div>
   </div>
 
