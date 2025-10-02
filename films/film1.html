@@ -4,6 +4,29 @@
   <meta charset="UTF-8">
   <title>Naughty Secrets</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    #instrukcja {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    #instrukcja img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.4);
+    }
+    #instrukcja p {
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
   <a href="../index.html">⬅ back to catalog</a>
@@ -18,8 +41,20 @@
   <p>Hot blonde with big breasts, she doesn't mind getting pounded in every hole.</p>
 
   <!-- Link do pełnej wersji -->
-  <a class="btn" href="https://shrinkme.top/ucD7Sxek" target="_blank">
+  <a id="filmBtn" class="btn" href="https://shrinkme.top/ucD7Sxek" target="_blank">
     🔥 Zobacz pełny film
   </a>
+
+  <!-- Instrukcja (ukryta, pokaże się po kliknięciu) -->
+  <div id="instrukcja">
+    <p>👉 Jak przejść przez reklamy (ok. 30–60 sek):</p>
+    <img src="../img/instrukcja.jpg" alt="Instrukcja krok po kroku">
+  </div>
+
+  <script>
+    document.getElementById("filmBtn").addEventListener("click", function() {
+      document.getElementById("instrukcja").style.display = "block";
+    });
+  </script>
 </body>
 </html>
